@@ -41,6 +41,7 @@
             this.calculate = new System.Windows.Forms.Button();
             this.createGraphTick = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.progressTextBox = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,7 +166,7 @@
             // createGraphTick
             // 
             this.createGraphTick.AutoSize = true;
-            this.createGraphTick.Location = new System.Drawing.Point(16, 198);
+            this.createGraphTick.Location = new System.Drawing.Point(16, 190);
             this.createGraphTick.Name = "createGraphTick";
             this.createGraphTick.Size = new System.Drawing.Size(120, 17);
             this.createGraphTick.TabIndex = 11;
@@ -176,18 +177,28 @@
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(12, 162);
+            this.label5.Location = new System.Drawing.Point(12, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(436, 24);
             this.label5.TabIndex = 12;
             this.label5.Text = "Параметры";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // progressTextBox
+            // 
+            this.progressTextBox.Location = new System.Drawing.Point(12, 213);
+            this.progressTextBox.Name = "progressTextBox";
+            this.progressTextBox.ReadOnly = true;
+            this.progressTextBox.Size = new System.Drawing.Size(436, 63);
+            this.progressTextBox.TabIndex = 13;
+            this.progressTextBox.Text = "Результат: N/A";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 327);
+            this.Controls.Add(this.progressTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.createGraphTick);
             this.Controls.Add(this.calculate);
@@ -201,6 +212,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -225,5 +237,6 @@
         private System.Windows.Forms.Button calculate;
         private System.Windows.Forms.CheckBox createGraphTick;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox progressTextBox;
     }
 }

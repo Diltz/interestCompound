@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace compound
 {
@@ -26,16 +27,16 @@ namespace compound
             bool converted_term = Double.TryParse(inputTerm.Text, out term);
             bool converted_percent = Double.TryParse(inputPercent.Text, out percent);
 
-            if (!converted_amount) { 
-                MessageBox.Show("Сумма неверная! Пример: 100000");
+            if (!converted_amount || amount < 0) { 
+                MessageBox.Show("Сумма неверная!");
                 return false;
-            } else if (!converted_term)
+            } else if (!converted_term || term < 1)
             {
-                MessageBox.Show("Неверный срок! Пример: 10");
+                MessageBox.Show("Неверный срок!");
                 return false;
-            } else if (!converted_percent)
+            } else if (!converted_percent || percent < 0)
             {
-                MessageBox.Show("Неверный процент! Пример: 24");
+                MessageBox.Show("Неверный процент!");
                 return false;
             }
 
@@ -66,17 +67,38 @@ namespace compound
             List<double> changesList = new List<double>();
             result = amount;
 
-            for (int i = 1; i <= term; i++)
+            for (int i = 1; i <= term; i++) // проходим текущий год
             {
-                double earning = result * percent;
+                for (int month = 1; month <= 12; month++) // разделяем год на 12 месяцев и считаем их процент доходности
+                {
+                    result += result * (percent / 12);
+                }
 
-                result += earning;
-                changesList.Add(earning);
+                changesList.Add(result); // заносим результат текущего года
             }
 
-            MessageBox.Show(Convert.ToInt32(Math.Round(result)).ToString());
+            // отобразить в таблцие
 
-            
+            string textBoxText = "Результат:\n";
+
+            for (int year = 0; year < changesList.Count; year++)
+            {
+                textBoxText += $"{year + 1} год - {String.Format("{0:.##}", changesList[year])} руб.\n";
+            }
+
+            textBoxText += $"\nНачальная сумма: {amount} руб.\nДоход: {String.Format("{0:.##}", result - amount)} руб.";
+            progressTextBox.Text = textBoxText;
+
+            // отображение графика
+
+            if (!createGraphTick.Checked) return;
+
+            // получение формы и графика
+
+            Graph graphForm = new Graph();
+
+            graphForm.Show();
+            graphForm.InsertData(changesList, amount);
         }
 
         // dragging

@@ -28,63 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.displayText = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.chartEarnings = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEarnings)).BeginInit();
             this.SuspendLayout();
             // 
-            // displayText
+            // chartEarnings
             // 
-            this.displayText.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.displayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.displayText.Location = new System.Drawing.Point(23, 241);
-            this.displayText.Name = "displayText";
-            this.displayText.Size = new System.Drawing.Size(331, 23);
-            this.displayText.TabIndex = 3;
-            this.displayText.Text = "Отображение первых _AGE_ лет";
-            this.displayText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(23, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(331, 23);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "График доходности";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(18, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(342, 203);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            chartArea1.Name = "ChartArea1";
+            this.chartEarnings.ChartAreas.Add(chartArea1);
+            this.chartEarnings.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.chartEarnings.Legends.Add(legend1);
+            this.chartEarnings.Location = new System.Drawing.Point(0, 0);
+            this.chartEarnings.Name = "chartEarnings";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartEarnings.Series.Add(series1);
+            this.chartEarnings.Size = new System.Drawing.Size(377, 273);
+            this.chartEarnings.TabIndex = 6;
+            this.chartEarnings.Text = "chart1";
             // 
             // Graph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 273);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.displayText);
+            this.Controls.Add(this.chartEarnings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Graph";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сложный процентщик [График доходности]";
             this.Load += new System.EventHandler(this.Graph_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEarnings)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label displayText;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartEarnings;
     }
 }
