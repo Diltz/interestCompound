@@ -63,5 +63,10 @@ namespace compound
 
             this.Location = p3;
         }
+
+        private void author_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Автор: Николай Такпешев\nЛицензия: MIT\nДата создания: Май 2023\nИсходный код: https://github.com/Diltz/interestCompound", "О программе", MessageBoxButtons.OK);
+        }
     }
 }
