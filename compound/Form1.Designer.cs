@@ -170,7 +170,7 @@
             this.createGraphTick.Name = "createGraphTick";
             this.createGraphTick.Size = new System.Drawing.Size(120, 17);
             this.createGraphTick.TabIndex = 11;
-            this.createGraphTick.Text = "Построить график";
+            this.createGraphTick.Text = "Визуализировать данные";
             this.createGraphTick.UseVisualStyleBackColor = true;
             // 
             // label5
