@@ -159,7 +159,7 @@
             this.calculate.Name = "calculate";
             this.calculate.Size = new System.Drawing.Size(436, 35);
             this.calculate.TabIndex = 10;
-            this.calculate.Text = "Высчитать";
+            this.calculate.Text = "Рассчитать";
             this.calculate.UseVisualStyleBackColor = true;
             this.calculate.Click += new System.EventHandler(this.calculate_Click);
             // 
@@ -168,7 +168,7 @@
             this.createGraphTick.AutoSize = true;
             this.createGraphTick.Location = new System.Drawing.Point(16, 190);
             this.createGraphTick.Name = "createGraphTick";
-            this.createGraphTick.Size = new System.Drawing.Size(120, 17);
+            this.createGraphTick.Size = new System.Drawing.Size(156, 17);
             this.createGraphTick.TabIndex = 11;
             this.createGraphTick.Text = "Визуализировать данные";
             this.createGraphTick.UseVisualStyleBackColor = true;

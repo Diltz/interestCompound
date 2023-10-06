@@ -30,7 +30,7 @@ namespace compound
             if (!converted_amount || amount < 0) { 
                 MessageBox.Show("Сумма неверная!");
                 return false;
-            } else if (!converted_term || term < 1)
+            } else if (!converted_term || term < 1 || term > 50)
             {
                 MessageBox.Show("Неверный срок!");
                 return false;
@@ -59,7 +59,7 @@ namespace compound
             double amount, term, percent;
 
             amount = Convert.ToDouble(inputAmount.Text);
-            term = Convert.ToDouble(inputTerm.Text);
+            term = Math.Floor(Convert.ToDouble(inputTerm.Text));
             percent = Convert.ToDouble(inputPercent.Text) * 0.01;
 
             // посчитать
