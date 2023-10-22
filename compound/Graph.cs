@@ -14,12 +14,7 @@ namespace compound
             InitializeComponent();
         }
 
-        private void Graph_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void InsertData(List<double> list, string term, string textboxString)
+        public void InsertData(List<double> list, List<double> notmultipled, string term, string textboxString)
         {
             resultBox.Text = textboxString;
 
@@ -36,10 +31,22 @@ namespace compound
             series1.BorderWidth = 3;
             series1.Font = new Font(FontFamily.GenericSansSerif, (float)9.5, System.Drawing.FontStyle.Bold);
 
+            Series series2 = new Series();
+            series2.ChartType = SeriesChartType.Spline;
+            series2.IsXValueIndexed = true;
+            series2.BorderWidth = 2;
+            series2.Font = new Font(FontFamily.GenericSansSerif, (float)9.5, System.Drawing.FontStyle.Bold);
+
             for (int i = 0; i < list.Count; i++)
             {
                 DataPoint data = new DataPoint(i + 1, list[i]);
                 series1.Points.Add(data);
+            }
+
+            for (int i = 0; i < notmultipled.Count; i++)
+            {
+                DataPoint data = new DataPoint(i + 1, notmultipled[i]);
+                series2.Points.Add(data);
             }
 
             foreach (var pt in series1.Points)
@@ -53,7 +60,19 @@ namespace compound
                 }
             }
 
+            foreach (var pt in series2.Points)
+            {
+                if (pt.XValue == notmultipled.Count)
+                {
+                    pt.MarkerColor = Color.Red;
+                    pt.MarkerSize = 5;
+                    pt.MarkerStyle = MarkerStyle.Circle;
+                    pt.Label = "#VAL{C}";
+                }
+            }
+
             chartEarnings.Series.Add(series1);
+            chartEarnings.Series.Add(series2);
         }
 
         private void chartEarnings_Click(object sender, EventArgs e)

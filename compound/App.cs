@@ -63,15 +63,19 @@ namespace compound
             // посчитать
 
             List<double> changesList = new List<double>();
+            List<double> notMultipliedList = new List<double>();
+
             double toAdd = (double)addEveryTerm.Value;
+            double amountNoInterest = amount;
             result = amount;
             string addtype = addTypeSelector.Text;
-
 
             if (selectTypeTerm.Text == "лет")
             {
                 for (int year = 1; year <= term; year++)
                 {
+                    double noInterest = amountNoInterest;
+
                     for (int month = 1; month <= 12; month++)
                     {
                         result += result * (annualInterestRate / 12);
@@ -80,17 +84,20 @@ namespace compound
                         {
                             case "ежемесячно":
                                 result += toAdd;
+                                noInterest += toAdd;
                                 break;
                             case "ежеквартально":
                                 if (month % 3 == 0)
                                 {
                                     result += toAdd;
+                                    noInterest += toAdd;
                                 }
                                 break;
                             case "раз в полгода":
                                 if (month % 6 == 0)
                                 {
                                     result += toAdd;
+                                    noInterest += toAdd;
                                 }
                                 break;
                         }
@@ -99,23 +106,21 @@ namespace compound
                     if (addtype == "раз в год")
                     {
                         result += toAdd;
+                        noInterest += toAdd;
                     }
 
+                    amountNoInterest = noInterest;
+                    notMultipliedList.Add(noInterest);
                     changesList.Add(result);
                 }
-            } else
+            }
+            else
             {
                 for (int month = 1; month <= term; month++)
                 {
-                    result += result * (annualInterestRate / 12);
-
-                    switch (addtype)
-                    {
-                        case "ежемесячно":
-                            result += toAdd;
-                            break;
-                    }
-
+                    result += result * (annualInterestRate / 12) + toAdd;
+                    amountNoInterest = amountNoInterest + toAdd;
+                    notMultipliedList.Add(amountNoInterest);
                     changesList.Add(result);
                 }
             }
@@ -243,7 +248,7 @@ namespace compound
             Graph graphForm = new Graph();
 
             graphForm.Show();
-            graphForm.InsertData(changesList, $"{changesList.Count} {selectTypeTerm.Text}", textresult);
+            graphForm.InsertData(changesList, notMultipliedList, $"{changesList.Count} {selectTypeTerm.Text}", textresult);
         }
 
         // dragging

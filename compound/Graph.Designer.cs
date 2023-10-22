@@ -97,7 +97,6 @@
             this.Name = "Graph";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сложный процентщик [Доходность]";
-            this.Load += new System.EventHandler(this.Graph_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartEarnings)).EndInit();
             this.ResumeLayout(false);
 
