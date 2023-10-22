@@ -1,6 +1,6 @@
 ﻿namespace compound
 {
-    partial class Form1
+    partial class Calculator
     {
         /// <summary>
         /// Required designer variable.
@@ -28,215 +28,299 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.title = new System.Windows.Forms.Label();
-            this.CloseApp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.inputAmount = new System.Windows.Forms.TextBox();
-            this.inputTerm = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.inputPercent = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.calculate = new System.Windows.Forms.Button();
-            this.createGraphTick = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.progressTextBox = new System.Windows.Forms.RichTextBox();
+            this.inputAmount = new System.Windows.Forms.NumericUpDown();
+            this.inputTerm = new System.Windows.Forms.NumericUpDown();
+            this.selectTypeTerm = new System.Windows.Forms.ComboBox();
+            this.inputPercent = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ReturnToMenu = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CloseApplication = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Calculate = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.addTypeSelector = new System.Windows.Forms.ComboBox();
+            this.addEveryTerm = new System.Windows.Forms.NumericUpDown();
+            this.exportData = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.inputAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputTerm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputPercent)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addEveryTerm)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.title);
-            this.panel1.Controls.Add(this.CloseApp);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(460, 29);
-            this.panel1.TabIndex = 1;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
-            // 
-            // title
-            // 
-            this.title.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.title.ForeColor = System.Drawing.Color.Black;
-            this.title.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.title.Location = new System.Drawing.Point(3, 6);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(248, 17);
-            this.title.TabIndex = 1;
-            this.title.Text = "Сложный процентщик [Калькулятор]";
-            this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
-            this.title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
-            this.title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
-            // 
-            // CloseApp
-            // 
-            this.CloseApp.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.CloseApp.ForeColor = System.Drawing.Color.Red;
-            this.CloseApp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CloseApp.Location = new System.Drawing.Point(432, 3);
-            this.CloseApp.Name = "CloseApp";
-            this.CloseApp.Size = new System.Drawing.Size(25, 25);
-            this.CloseApp.TabIndex = 0;
-            this.CloseApp.Text = "X";
-            this.CloseApp.UseVisualStyleBackColor = true;
-            this.CloseApp.Click += new System.EventHandler(this.CloseApp_Click);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold);
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(10, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(436, 36);
+            this.label1.Size = new System.Drawing.Size(290, 32);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Введите данные, чтобы получить расчёты";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(14, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Сумма вклада";
-            // 
-            // inputAmount
-            // 
-            this.inputAmount.Location = new System.Drawing.Point(156, 79);
-            this.inputAmount.Name = "inputAmount";
-            this.inputAmount.Size = new System.Drawing.Size(292, 20);
-            this.inputAmount.TabIndex = 5;
-            // 
-            // inputTerm
-            // 
-            this.inputTerm.Location = new System.Drawing.Point(156, 105);
-            this.inputTerm.Name = "inputTerm";
-            this.inputTerm.Size = new System.Drawing.Size(292, 20);
-            this.inputTerm.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(14, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Срок вклада (лет)";
-            // 
-            // inputPercent
-            // 
-            this.inputPercent.Location = new System.Drawing.Point(156, 131);
-            this.inputPercent.Name = "inputPercent";
-            this.inputPercent.Size = new System.Drawing.Size(292, 20);
-            this.inputPercent.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(14, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 18);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "% годовых";
-            // 
-            // calculate
-            // 
-            this.calculate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.calculate.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.calculate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.calculate.Location = new System.Drawing.Point(12, 280);
-            this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(436, 35);
-            this.calculate.TabIndex = 10;
-            this.calculate.Text = "Рассчитать";
-            this.calculate.UseVisualStyleBackColor = true;
-            this.calculate.Click += new System.EventHandler(this.calculate_Click);
-            // 
-            // createGraphTick
-            // 
-            this.createGraphTick.AutoSize = true;
-            this.createGraphTick.Location = new System.Drawing.Point(16, 190);
-            this.createGraphTick.Name = "createGraphTick";
-            this.createGraphTick.Size = new System.Drawing.Size(156, 17);
-            this.createGraphTick.TabIndex = 11;
-            this.createGraphTick.Text = "Визуализировать данные";
-            this.createGraphTick.UseVisualStyleBackColor = true;
+            this.label1.Text = "Введите данные";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(12, 154);
+            this.label5.Location = new System.Drawing.Point(11, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(436, 24);
+            this.label5.Size = new System.Drawing.Size(287, 24);
             this.label5.TabIndex = 12;
             this.label5.Text = "Параметры";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // progressTextBox
+            // inputAmount
             // 
-            this.progressTextBox.Location = new System.Drawing.Point(12, 213);
-            this.progressTextBox.Name = "progressTextBox";
-            this.progressTextBox.ReadOnly = true;
-            this.progressTextBox.Size = new System.Drawing.Size(436, 63);
-            this.progressTextBox.TabIndex = 13;
-            this.progressTextBox.Text = "Результат: N/A";
+            this.inputAmount.Location = new System.Drawing.Point(130, 72);
+            this.inputAmount.Maximum = new decimal(new int[] {
+            1874919423,
+            2328306,
+            0,
+            0});
+            this.inputAmount.Name = "inputAmount";
+            this.inputAmount.Size = new System.Drawing.Size(158, 20);
+            this.inputAmount.TabIndex = 15;
+            this.inputAmount.ThousandsSeparator = true;
             // 
-            // Form1
+            // inputTerm
+            // 
+            this.inputTerm.Location = new System.Drawing.Point(130, 98);
+            this.inputTerm.Name = "inputTerm";
+            this.inputTerm.Size = new System.Drawing.Size(101, 20);
+            this.inputTerm.TabIndex = 16;
+            // 
+            // selectTypeTerm
+            // 
+            this.selectTypeTerm.FormattingEnabled = true;
+            this.selectTypeTerm.Items.AddRange(new object[] {
+            "лет",
+            "мес."});
+            this.selectTypeTerm.Location = new System.Drawing.Point(237, 98);
+            this.selectTypeTerm.Name = "selectTypeTerm";
+            this.selectTypeTerm.Size = new System.Drawing.Size(51, 21);
+            this.selectTypeTerm.TabIndex = 17;
+            this.selectTypeTerm.SelectedIndexChanged += new System.EventHandler(this.selectTypeTerm_SelectedIndexChanged);
+            // 
+            // inputPercent
+            // 
+            this.inputPercent.Location = new System.Drawing.Point(130, 125);
+            this.inputPercent.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.inputPercent.Name = "inputPercent";
+            this.inputPercent.Size = new System.Drawing.Size(158, 20);
+            this.inputPercent.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.ReturnToMenu);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.CloseApplication);
+            this.panel1.Location = new System.Drawing.Point(-2, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(313, 29);
+            this.panel1.TabIndex = 20;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Panel_MouseUp);
+            // 
+            // ReturnToMenu
+            // 
+            this.ReturnToMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ReturnToMenu.ForeColor = System.Drawing.Color.Black;
+            this.ReturnToMenu.Location = new System.Drawing.Point(252, 3);
+            this.ReturnToMenu.Name = "ReturnToMenu";
+            this.ReturnToMenu.Size = new System.Drawing.Size(22, 22);
+            this.ReturnToMenu.TabIndex = 30;
+            this.ReturnToMenu.Text = "<";
+            this.ReturnToMenu.UseVisualStyleBackColor = true;
+            this.ReturnToMenu.Click += new System.EventHandler(this.ReturnToMenu_Click);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(3, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(136, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Калькулятор";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // CloseApplication
+            // 
+            this.CloseApplication.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CloseApplication.ForeColor = System.Drawing.Color.Red;
+            this.CloseApplication.Location = new System.Drawing.Point(280, 3);
+            this.CloseApplication.Name = "CloseApplication";
+            this.CloseApplication.Size = new System.Drawing.Size(22, 22);
+            this.CloseApplication.TabIndex = 29;
+            this.CloseApplication.Text = "X";
+            this.CloseApplication.UseVisualStyleBackColor = true;
+            this.CloseApplication.Click += new System.EventHandler(this.CloseApplication_Click);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(12, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 20);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Сумма";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.UseCompatibleTextRendering = true;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(12, 99);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Срок";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.UseCompatibleTextRendering = true;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(12, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 20);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Годовая ставка";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.UseCompatibleTextRendering = true;
+            // 
+            // Calculate
+            // 
+            this.Calculate.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Calculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Calculate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.Calculate.ForeColor = System.Drawing.Color.Black;
+            this.Calculate.Location = new System.Drawing.Point(15, 241);
+            this.Calculate.Name = "Calculate";
+            this.Calculate.Size = new System.Drawing.Size(273, 32);
+            this.Calculate.TabIndex = 24;
+            this.Calculate.Text = "Рассчитать";
+            this.Calculate.UseVisualStyleBackColor = false;
+            this.Calculate.Click += new System.EventHandler(this.calculate_Click);
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(12, 151);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Пополнение";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.UseCompatibleTextRendering = true;
+            // 
+            // addTypeSelector
+            // 
+            this.addTypeSelector.DropDownWidth = 120;
+            this.addTypeSelector.Items.AddRange(new object[] {
+            "ежемесячно",
+            "ежеквартально",
+            "раз в полгода",
+            "раз в год"});
+            this.addTypeSelector.Location = new System.Drawing.Point(237, 154);
+            this.addTypeSelector.Name = "addTypeSelector";
+            this.addTypeSelector.Size = new System.Drawing.Size(51, 21);
+            this.addTypeSelector.TabIndex = 28;
+            // 
+            // addEveryTerm
+            // 
+            this.addEveryTerm.Location = new System.Drawing.Point(130, 154);
+            this.addEveryTerm.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.addEveryTerm.Name = "addEveryTerm";
+            this.addEveryTerm.Size = new System.Drawing.Size(101, 20);
+            this.addEveryTerm.TabIndex = 27;
+            this.addEveryTerm.ThousandsSeparator = true;
+            // 
+            // exportData
+            // 
+            this.exportData.AutoSize = true;
+            this.exportData.Location = new System.Drawing.Point(15, 206);
+            this.exportData.Name = "exportData";
+            this.exportData.Size = new System.Drawing.Size(188, 17);
+            this.exportData.TabIndex = 29;
+            this.exportData.Text = "Экспортировать данные в Excel";
+            this.exportData.UseVisualStyleBackColor = true;
+            // 
+            // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 327);
-            this.Controls.Add(this.progressTextBox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.createGraphTick);
-            this.Controls.Add(this.calculate);
-            this.Controls.Add(this.inputPercent);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(303, 296);
+            this.Controls.Add(this.exportData);
+            this.Controls.Add(this.addTypeSelector);
+            this.Controls.Add(this.addEveryTerm);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.Calculate);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.inputTerm);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.inputAmount);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.inputPercent);
+            this.Controls.Add(this.selectTypeTerm);
+            this.Controls.Add(this.inputTerm);
+            this.Controls.Add(this.inputAmount);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Calculator_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.inputAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputTerm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inputPercent)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addEveryTerm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button CloseApp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox inputAmount;
-        private System.Windows.Forms.TextBox inputTerm;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox inputPercent;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button calculate;
-        private System.Windows.Forms.CheckBox createGraphTick;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox progressTextBox;
+        private System.Windows.Forms.NumericUpDown inputAmount;
+        private System.Windows.Forms.NumericUpDown inputTerm;
+        private System.Windows.Forms.ComboBox selectTypeTerm;
+        private System.Windows.Forms.NumericUpDown inputPercent;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Calculate;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox addTypeSelector;
+        private System.Windows.Forms.NumericUpDown addEveryTerm;
+        private System.Windows.Forms.Button CloseApplication;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button ReturnToMenu;
+        private System.Windows.Forms.CheckBox exportData;
     }
 }
