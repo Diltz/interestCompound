@@ -28,7 +28,7 @@ namespace compound
             if (!converted_amount || amount <= 0) { 
                 MessageBox.Show("Сумма неверная!");
                 return false;
-            } else if (!converted_term || term < 1 || term > 100)
+            } else if (!converted_term || term < 1 || term > 75)
             {
                 MessageBox.Show("Неверный срок!");
                 return false;
