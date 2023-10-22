@@ -236,7 +236,7 @@ namespace compound
 
             string lastChange = changesList.Last().ToString("C2");
 
-            textresult += $"\nДоход: {lastChange}\nИтогвая сумма: {lastChange}\nСумма вклада: {amount.ToString("C2")}";
+            textresult += $"\nДоход: {(changesList.Last() - amount).ToString("C2")}\nИтогвая сумма: {lastChange}\nСумма вклада: {amount.ToString("C2")}";
 
             // получение формы и графика
 
