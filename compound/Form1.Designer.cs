@@ -77,6 +77,11 @@
             // 
             // inputAmount
             // 
+            this.inputAmount.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
             this.inputAmount.Location = new System.Drawing.Point(130, 72);
             this.inputAmount.Maximum = new decimal(new int[] {
             1874919423,
@@ -109,6 +114,12 @@
             // 
             // inputPercent
             // 
+            this.inputPercent.DecimalPlaces = 2;
+            this.inputPercent.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
             this.inputPercent.Location = new System.Drawing.Point(130, 125);
             this.inputPercent.Maximum = new decimal(new int[] {
             1000,

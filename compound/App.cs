@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.Policy;
 using System.Windows.Forms;
 using OfficeOpenXml;
-using static OfficeOpenXml.ExcelErrorValue;
 
 namespace compound
 {
@@ -178,7 +176,7 @@ namespace compound
                         rate.Style.Font.Bold = true;
 
                         worksheet.Cells[2, 2].Value = annualInterestRate;
-                        worksheet.Cells[2, 2].Style.Numberformat.Format = "0%";
+                        worksheet.Cells[2, 2].Style.Numberformat.Format = "0.00%";
 
                         ExcelRange term_cell = worksheet.Cells[1, 3];
                         term_cell.Value = "Срок вклада";
@@ -212,9 +210,15 @@ namespace compound
                             cell.Style.Numberformat.Format = "0%";
                         }
 
-                        // Сохранение файла
-                        FileInfo file = new FileInfo(filePath + ".xlsx");
-                        excelPackage.SaveAs(file);
+                        try
+                        {
+                            // Сохранение файла
+                            FileInfo file = new FileInfo(filePath + ".xlsx");
+                            excelPackage.SaveAs(file);
+                        } catch
+                        {
+                            MessageBox.Show("Не удалось сохранить электронную таблицу!");
+                        }
                     }
                 }
             }
